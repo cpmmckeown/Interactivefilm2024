@@ -74,7 +74,9 @@ body {
     <source src="" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
-  <audio id='bMusic' autoplay><source src=''></audio> 
+
+  <audio id='bMusic' autoplay ><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3'></audio>
+  
 
 <div class="content" id="content">
   <div class="grid-container-one-column">
@@ -91,6 +93,10 @@ var content = document.getElementById("content");
 var bMusic = document.getElementById("bMusic");
 var curTime;
 
+//Turn the volume down
+bMusic.volume = 0.35;
+
+//Allows seamless(ish) bground music
 function getCurTime() { 
   curTime = bMusic.currentTime;
 } 
@@ -103,7 +109,8 @@ function start()
 {
   video.src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%201.mp4";
   content.innerHTML = `
-  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3' type='audio/mpeg'></audio>
+  <!--<audio id='bMusic' autoplay><source src=''></audio>--> 
+  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/getHelpVO.mp3' type='audio/mpeg'></audio>
     <div class='grid-container-two-column'>
         <div class='grid-item'>
             <button class='myBtn' onclick='functionA()'>Call</button>
@@ -117,16 +124,28 @@ function start()
 
 function functionA() {
   getCurTime();
-  video.src="https://raw.githubusercontent.com/cpmmckeown/introductiontodigitalstorytelling/main/Alcoad%20clip%202.mp4";
-  content.innerHTML = "<audio autoplay><source src='https://github.com/cpmmckeown/introductiontodigitalstorytelling/blob/main/everynowandthen.mp3?raw=true' type='audio/mpeg'></audio><div class='grid-container-one-column'><div class='grid-item'><button class='myBtn' onclick='start()'>Go Back</button></div></div>";
+  video.src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%203.mp4";
+  content.innerHTML = `
+  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/CallVO.mp3' type='audio/mpeg'></audio>
+  <div class='grid-container-one-column'>
+    <div class='grid-item'>
+      <button class='myBtn' onclick='start()'>Go Back</button>
+    </div>
+  </div>`;
   setCurTime();
 }
 
 function functionB() 
 {
   getCurTime();
-  video.src="https://raw.githubusercontent.com/cpmmckeown/introductiontodigitalstorytelling/main/Alcoad%20clips.mp4";
-  content.innerHTML = "<audio autoplay><source src='https://github.com/cpmmckeown/introductiontodigitalstorytelling/blob/main/giveyourselfcredit.mp3?raw=true' type='audio/mpeg'></audio><div class='grid-container-one-column'><div class='grid-item'><button class='myBtn' onclick='start()'>Go Back</button></div></div>"
+  video.src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%202.mp4";
+  content.innerHTML = `
+  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/noCall.mp3' type='audio/mpeg'></audio>
+  <div class='grid-container-one-column'>
+    <div class='grid-item'>
+    <button class='myBtn' onclick='start()'>Go Back</button>
+    </div>
+  </div>`;
   setCurTime();
 }
 
