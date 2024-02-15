@@ -108,15 +108,15 @@ var curTime;
 //Turn the volume down
 bMusic.volume = 0.35;
 
-//Allows seamless(ish) bground music
-function getCurTime() { 
+//Allows getting specific times from the background music if needed. 
+/*function getCurTime() { 
   curTime = bMusic.currentTime;
 } 
 
 function setCurTime() { 
   bMusic.currentTime = curTime;
 } 
-
+*/
 function start() 
 {
   if (first==true)
@@ -134,12 +134,9 @@ function start()
         <div class='grid-item'>
             <button class='myBtn' onclick='functionB()'><p class="fade-in-text">Don't call</p></button>
         </div>`;
-  //getCurTime();
-  //setCurTime();
-}
+ }
 
 function functionA() {
-  //getCurTime();
   video.src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%203.mp4";
   content.innerHTML = `
   <!--<audio id='bMusic' autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3'></audio>-->
@@ -149,12 +146,10 @@ function functionA() {
       <button class='myBtn' onclick='start()'>Go Back</button>
     </div>
   </div>`;
-  //setCurTime();
-}
+ }
 
 function functionB() 
 {
-  //getCurTime();
   video.src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%202.mp4";
   content.innerHTML = `
   <!--<audio id='bMusic' autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3'></audio>-->
@@ -164,8 +159,7 @@ function functionB()
     <button class='myBtn' onclick='start()'>Go Back</button>
     </div>
   </div>`;
-  //setCurTime();
-}
+ }
 
 </script>
 
