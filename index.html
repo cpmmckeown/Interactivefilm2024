@@ -64,6 +64,17 @@ body {
   background: #ddd;
   color: black;
 }
+
+.fade-in-text {
+  font-family: Arial;
+  animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  75%{opacity: 0;}
+  100% { opacity: 1; }
+}
 </style>
 </head>
 
@@ -113,10 +124,10 @@ function start()
   <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/getHelpVO.mp3' type='audio/mpeg'></audio>
     <div class='grid-container-two-column'>
         <div class='grid-item'>
-            <button class='myBtn' onclick='functionA()'>Call</button>
+            <button class='myBtn' onclick='functionA()'><p class="fade-in-text">Call</p></button>
         </div>
         <div class='grid-item'>
-            <button class='myBtn' onclick='functionB()'>Don't call</button>
+            <button class='myBtn' onclick='functionB()'><p class="fade-in-text">Don't call</p></button>
         </div>`;
   getCurTime();
   setCurTime();
